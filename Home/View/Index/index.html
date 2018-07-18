@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>首页</title>
+	<link rel="icon" type="img/x-ico" href="images/f.ico">
+
+	<!-- mobile apps -->
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //mobile apps -->
+
+	<!-- Custom Theme files -->
+	<link href="./Public/Home/Css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="./Public/Home/Css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="./Public/Home/Css/flexslider.css" type="text/css" media="screen" />
+	<!-- //Custom Theme files -->
+
+	<!-- js -->
+	<script src="./Public/Home/Js/jquery-1.11.1.min.js"></script>
+	<!-- //js -->
+
+	<!-- zepto -->
+	<!-- <script src="js/zepto.min.js"></script>
+<script src="js/touch.js"></script> -->
+	<!-- //zepto -->
+
+	<!-- web-fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet'
+	  type='text/css'>
+	<!-- //web-fonts -->
+
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="./Public/Home/Js/move-top.js"></script>
+	<script type="text/javascript" src="./Public/Home/Js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+
+</head>
+
+<body>
+	<!-- banner -->
+	<div class="banner">
+		<div class="banner-info" id="aa">
+
+			<!-- banner-text(img) -->
+			<div class="banner-text" style="padding-left: 80px;">
+				<img src="images/tip.png">
+				<br>
+			</div>
+			<!-- //banner-text(img) -->
+
+			<!-- top-navigation -->
+			<div class="main">
+				<div class="container">
+					<nav id="menu" class="nav top-nav">
+						<button class="navtoogle" id="slidebtn">
+							<span class="icon-menu glyphicon glyphicon-menu-hamburger"> </span> Menu
+						</button>
+						<ul id="dd">
+							<li>
+								<a href="index.html">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+									</span>
+									<span>首页</span>
+								</a>
+							</li>
+							<li>
+								<a href="about.html" onclick="$('#section-2').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
+									</span>
+									<span>关于</span>
+								</a>
+							</li>
+							<li>
+								<a href="blog.html" onclick="$('#section-3').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
+									</span>
+									<span>博客</span>
+								</a>
+							</li>
+							<li>
+								<a href="dailylife.html" onclick="$('#section-4').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+									</span>
+									<span>生活</span>
+								</a>
+							</li>
+							<li>
+								<a href="other.html" onclick="$('#section-5').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+									</span>
+									<span>完善中</span>
+								</a>
+							</li>
+							<li>
+								<a href="contact.html" onclick="$('#section-6').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
+									</span>
+									<span class="mediafont">联系我们</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- script-for-menu -->
+					<script>
+						if (window.outerWidth < 520) {
+							$(".top-nav").bind('click', function (e) {
+								$(".top-nav ul").slideToggle("normal", function () {});
+								e.stopPropagation();
+							});
+							$(".banner-text").bind("touchstart", function (e) {
+								$(".top-nav ul").slideUp("normal", function () {});
+								e.stopPropagation();
+							});
+						}
+					</script>
+					<!-- //script-for-menu -->
+
+					<script src="./Public/Home/Js/modernizr.custom.js"></script>
+				</div>
+			</div>
+			<!-- //top-navigation -->
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //banner -->
+
+	<!-- welcome -->
+	<div class="welcome">
+		<div class="container">
+			<div class="title">
+				<h3>测试内容</h3>
+				<p>期待你的加入！</p>
+			</div>
+			<div class="w3ls-row alert">
+				<div class="col-md-6 welcome-left">
+					<img src="images/team.jpg" width="570px" height="424px" class="img-responsive" alt="" />
+				</div>
+				<div class="col-md-6 welcome-right">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<h4>测试内容</h4>
+					<p>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</p>
+					<a href="single.html" class="more">更多</a>
+				</div>
+
+				<!-- script for top-navigation menu -->
+				<script>
+					if (window.outerWidth < 520) {
+						$(".welcome").bind('touchstart', function (e) {
+							$(".top-nav ul").slideUp("normal", function () {});
+							e.stopPropagation();
+						});
+					}
+				</script>
+				<!-- //script for top-navigation menu -->
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //welcome -->
+
+	<!-- slid -->
+	<div class="slid">
+		<div class="container">
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<div class="slid-text">
+								<h4>徐炜</h4>
+								<img src="images/xw.JPG" width="100" height="100" alt="" />
+								<p>徐炜，“三人行”小组组长，就读于三亚学院信息与智能工程学院，所在班级为计算机科学与技术（网络工程）1401，作为小组的组长，经常帮助组员解决技术上的难题，有时候遇到自己解决不了的问题时会和组员体一同探讨；时常也会分享他所知道的一些最新科技知识。目前专攻方向为web前端。</p>
+								<a href="about.html" class="more">更多</a>
+							</div>
+						</li>
+						<li>
+							<div class="slid-text">
+								<h4>范少博</h4>
+								<img src="images/fs.jpg">
+								<p>范少博，“三人行”小组副组长，就读于三亚学院信息与智能工程学院，所在班级为计算机科学与技术（网络工程）1401，帮助各组员解决技术上的问题，与组长共同开发项目，在一起经历的众多项目中，总是能看到两人的身影。经常与组长和其他组员分享自己开发过程中的经验和心得。目前专攻方向为web前端。</p>
+								<a href="about.html" class="more">更多</a>
+							</div>
+						</li>
+						<li>
+							<div class="slid-text">
+								<h4>李颖</h4>
+								<img src="images/ly.JPG" width="100" height="100" alt="" />
+								<p>李颖，“三人行”小组发起人，就读于三亚学院信息与智能工程学院，所在班级为计算机科学与技术（网络工程）1401，作为队伍里面唯一一名女生，在项目训练时，总能体现出女生的优势，无论是从颜色上还是布局结构上，总能比我们做的好看一点。目前李颖同学为了追求更高的学历选择了考研这条道路，并且也在一直的努力中。</p>
+								<a href="about.html" class="more">更多</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- FlexSlider -->
+			<script defer src="./Public/Home/Js/jquery.flexslider.js"></script>
+			<script type="text/javascript">
+				$(window).load(function () {
+					$('.flexslider').flexslider({
+						animation: "slide",
+						controlsContainer: $(".custom-controls-container"),
+						customDirectionNav: $(".custom-navigation a")
+					});
+				});
+			</script>
+			<!-- //FlexSlider -->
+
+		</div>
+	</div>
+	<!-- //slid -->
+
+	<!-- latest -->
+	<div class="latest">
+		<div class="container">
+			<div class="title">
+				<h3>最新动态</h3>
+				<p>最近最新所发生我们身边的事</p>
+			</div>
+			<div class="w3ls-row">
+				<div class="col-sm-4 col-md-4  w3latest-grids">
+					<img src="images/birthday.jpg" alt="" />
+					<div class="w3latest-grids-text">
+						<h4>大师兄生日 </h4>
+						<p>团队动态</p>
+						<a href="single.html" class="more">更多详情</a>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4  w3latest-grids">
+					<img src="images/offer.jpg" alt="" />
+					<div class="w3latest-grids-text">
+						<h4>实习生徐炜</h4>
+						<p>团队动态</p>
+						<a href="single.html" class="more">更多详情</a>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4  w3latest-grids">
+					<img src="images/hile.jpg" alt="" />
+					<div class="w3latest-grids-text">
+						<h4>考研路上</h4>
+						<p>团队动态</p>
+						<a href="single.html" class="more">更多详情</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //latest -->
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-wthree-nav">
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="about.html">关于</a>
+					</li>
+					<li>
+						<a href="blog.html">博客</a>
+					</li>
+					<li>
+						<a href="dailylife.html">生活</a>
+					</li>
+					<li>
+						<a href="other.html">内容完善中</a>
+					</li>
+					<li>
+						<a href="contact.html">联系我们</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-w3lsrow">
+				<div class="col-md-4 footer-grids footer-address">
+					<h3>联系方式 :</h3>
+					<ul>
+						<li>
+							<i class="glyphicon glyphicon-send"></i> 572000
+							<span> 海南省三亚市三亚学院北区 </span>
+						</li>
+						<li>
+							<i class="glyphicon glyphicon-phone"></i> +86 131 8046 0240 </li>
+						<li>
+							<i class="glyphicon glyphicon-envelope"></i>
+							<a href="mailto:example@mail.com"> fanshaobo_007@163.com</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-grids subscribe">
+					<h3>登记邮箱 :</h3>
+					<p>请登记你的邮箱，方便之时我们好与你联系</p>
+					<form action="#" method="post">
+						<input type="text" name="Email" placeholder="请输入你的邮箱" required="">
+						<input type="submit" value="提交">
+					</form>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 footer-grids footer-icons">
+					<h3>社交关注 :</h3>
+					<p>
+						<img src="./Public/Home/Images/qq.png">1374162413</p>
+					<p>
+						<img src="./Public/Home/Images/sina.png">阳光照进回忆的日子</p>
+					<p>
+						<img src="./Public/Home/Images/wechat.png">fansbo</p>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="footer-bottom">
+				<p>@阳光照进回忆的日子</p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var defaults = {
+				containerID: 'toTop',
+				containerHoverID: 'toTopHover',
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up -->
+
+	<script src="./Public/Home/Js/bootstrap.js"></script>
+</body>
+
+</html>
