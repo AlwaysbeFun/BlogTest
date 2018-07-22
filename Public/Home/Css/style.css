@@ -350,7 +350,29 @@ ul.social-icons,
     -ms-transition: box-shadow .4s ease-in-out;
     transition: box-shadow .4s ease-in-out;
 }
-
+.blog-info{
+    height:230px !important;
+}
+.blog-info p{
+    height:80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.blog-text{
+    height:200px;
+}
+#inputArtical{
+    width:70%;
+}
+#inputType{
+    width:70%;
+}
+#inputContent{
+    width:70%;
+    height:300px;
+}
 /* 屏幕大小大于800px样式 */
 
 @media (min-width: 50em) {

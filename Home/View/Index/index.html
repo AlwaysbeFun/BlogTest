@@ -3,7 +3,7 @@
 
 <head>
 	<title>首页</title>
-	<link rel="icon" type="img/x-ico" href="images/f.ico">
+	<link rel="icon" type="img/x-ico" href="./Public/Home/Images/f.ico">
 
 	<!-- mobile apps -->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -64,8 +64,8 @@
 		<div class="banner-info" id="aa">
 
 			<!-- banner-text(img) -->
-			<div class="banner-text" style="padding-left: 80px;">
-				<img src="images/tip.png">
+			<div class="banner-text" style="padding-left: 80px;padding-top:100px;padding-bottom:100px;">
+				<img src="./Public/Home/Images/tip.png">
 				<br>
 			</div>
 			<!-- //banner-text(img) -->
@@ -79,56 +79,57 @@
 						</button>
 						<ul id="dd">
 							<li>
-								<a href="index.html">
+								<a href="?c=Index&a=index">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+										<i aria-hidden="true" class="icon-home glyphicon glyphicon glyphicon-book"></i>
 									</span>
-									<span>首页</span>
+									<span>全部文章</span>
 								</a>
 							</li>
 							<li>
-								<a href="about.html" onclick="$('#section-2').animatescroll();">
+								<a href="?c=Index&a=add" onclick="$('#section-2').animatescroll();">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
+										<i aria-hidden="true" class="icon-services glyphicon glyphicon-pencil"></i>
 									</span>
-									<span>关于</span>
+									<span>写文章</span>
 								</a>
 							</li>
 							<li>
-								<a href="blog.html" onclick="$('#section-3').animatescroll();">
+								<a href="?c=Image&a=index" onclick="$('#section-3').animatescroll();">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
+										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon glyphicon-picture"></i>
 									</span>
-									<span>博客</span>
+									<span>图片</span>
 								</a>
 							</li>
 							<li>
-								<a href="dailylife.html" onclick="$('#section-4').animatescroll();">
+								<a href="?c=Video&a=index" onclick="$('#section-4').animatescroll();">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+										<i aria-hidden="true" class="icon-blog glyphicon glyphicon glyphicon-facetime-video
+										"></i>
 									</span>
-									<span>生活</span>
+									<span>视频</span>
 								</a>
 							</li>
 							<li>
-								<a href="other.html" onclick="$('#section-5').animatescroll();">
+								<a href="?c=Contect&a=index" onclick="$('#section-5').animatescroll();">
 									<span class="icon mediaIcon">
-										<i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+										<i aria-hidden="true" class="icon-team glyphicon glyphicon glyphicon-envelope"></i>
 									</span>
-									<span>完善中</span>
+									<span>联系我</span>
 								</a>
 							</li>
 							<li>
-								<a href="contact.html" onclick="$('#section-6').animatescroll();">
+								<a href="?c=User&a=index" onclick="$('#section-6').animatescroll();">
 									<span class="icon mediaIcon">
-										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
+										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-user"></i>
 									</span>
-									<span class="mediafont">联系我们</span>
+									<span class="mediafont">用户登录</span>
 								</a>
 							</li>
 						</ul>
 					</nav>
-					
+
 					<!-- script-for-menu -->
 					<script>
 						if (window.outerWidth < 520) {
@@ -157,20 +158,72 @@
 	<!-- welcome -->
 	<div class="welcome">
 		<div class="container">
-			<div class="title">
-				<h3>测试内容</h3>
-				<p>期待你的加入！</p>
-			</div>
 			<div class="w3ls-row alert">
-				<div class="col-md-6 welcome-left">
-					<img src="images/team.jpg" width="570px" height="424px" class="img-responsive" alt="" />
+				<!-- content -->
+				<div class="blog single-page single-pagebg">
+					<div class="container">
+						<{foreach $arrs as $arr}>
+							<div class="blog-info">
+
+								<div class="blog-left">
+									<h6><{$arr.addate|date_format:'%d'}>
+										<span>th</span>
+									</h6>
+									<h5><{$arr.addate|date_format:'%B'}></h5>
+								</div>
+								<div class="blog-right">
+									<div class="blog-text">
+										<h4>
+											<{$arr.title}>
+										</h4>
+										<p>
+											<{$arr.content}>
+										</p>
+										<div class="article-links">
+											<ul>
+												<li>
+													<i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+													<span>
+														<{$arr.addate|date_format:'%Y-%m-%d %H:%M:%S'}>
+													</span>
+												</li>
+												<li>
+													<a href="#">
+														<i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+														<span>
+															<{$arr.user_name}>
+														</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+														<span>回复</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="glyphicon glyphicon-share" aria-hidden="true"></i>
+														<span>分享</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="glyphicon glyphicon-link" aria-hidden="true"></i>
+														<span>复制链接</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="clearfix"> </div>
+							</div>
+							<{/foreach}>
+					</div>
 				</div>
-				<div class="col-md-6 welcome-right">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<h4>测试内容</h4>
-					<p>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</p>
-					<a href="single.html" class="more">更多</a>
-				</div>
+				<!-- //content -->
 
 				<!-- script for top-navigation menu -->
 				<script>

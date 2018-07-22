@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>写文章</title>
+  <link rel="icon" type="img/x-ico" href="./Public/Home/Images/f.ico">
+
+  <!-- mobile apps -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="" />
+  <script type="application/x-javascript">
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- //mobile apps -->
+
+  <!-- Custom Theme files -->
+  <link href="./Public/Home/Css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link href="./Public/Home/Css/style.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="./Public/Home/Css/flexslider.css" type="text/css" media="screen" />
+  <!-- //Custom Theme files -->
+
+  <!-- js -->
+  <script src="./Public/Home/Js/jquery-1.11.1.min.js"></script>
+  <!-- //js -->
+
+  <!-- web-fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet'
+    type='text/css'>
+  <!-- //web-fonts -->
+
+  <!-- start-smooth-scrolling -->
+  <script type="text/javascript" src="./Public/Home/Js/move-top.js"></script>
+  <script type="text/javascript" src="./Public/Home/Js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $(".scroll").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+  <!-- //end-smooth-scrolling -->
+
+</head>
+
+<body>
+  <!-- banner -->
+  <div class="banner">
+    <div class="banner-info" id="aa">
+
+      <!-- banner-text(img) -->
+      <div class="banner-text" style="padding-left: 80px;padding-top:100px;padding-bottom:100px;">
+        <img src="./Public/Home/Images/tip.png">
+        <br>
+      </div>
+      <!-- //banner-text(img) -->
+
+      <!-- top-navigation -->
+      <div class="main">
+        <div class="container">
+          <nav id="menu" class="nav top-nav">
+            <button class="navtoogle" id="slidebtn">
+              <span class="icon-menu glyphicon glyphicon-menu-hamburger"> </span> Menu
+            </button>
+            <ul id="dd">
+							<li>
+								<a href="?c=Index&a=index">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-home glyphicon glyphicon glyphicon-book"></i>
+									</span>
+									<span>全部文章</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Index&a=add" onclick="$('#section-2').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-services glyphicon glyphicon-pencil"></i>
+									</span>
+									<span>写文章</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Image&a=index" onclick="$('#section-3').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon glyphicon-picture"></i>
+									</span>
+									<span>图片</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Video&a=index" onclick="$('#section-4').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-blog glyphicon glyphicon glyphicon-facetime-video
+										"></i>
+									</span>
+									<span>视频</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Contect&a=index" onclick="$('#section-5').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-team glyphicon glyphicon glyphicon-envelope"></i>
+									</span>
+									<span>联系我</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=User&a=index" onclick="$('#section-6').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-user"></i>
+									</span>
+									<span class="mediafont">用户登录</span>
+								</a>
+							</li>
+						</ul>
+          </nav>
+
+          <!-- script-for-menu -->
+          <script>
+            if (window.outerWidth < 520) {
+              $(".top-nav").bind('click', function (e) {
+                $(".top-nav ul").slideToggle("normal", function () {});
+                e.stopPropagation();
+              });
+              $(".banner-text").bind("touchstart", function (e) {
+                $(".top-nav ul").slideUp("normal", function () {});
+                e.stopPropagation();
+              });
+            }
+          </script>
+          <!-- //script-for-menu -->
+
+          <script src="./Public/Home/Js/modernizr.custom.js"></script>
+        </div>
+      </div>
+      <!-- //top-navigation -->
+
+      <div class="clearfix"></div>
+    </div>f
+  </div>
+  <!-- //banner -->
+
+  <!-- welcome -->
+  <div class="welcome">
+    <div class="container">
+      <form action="?a=insert" method="post" class="form-horizontal">
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">文章标题</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputArtical" name="title" placeholder="请输入标题">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">文章类别</label>
+          <div class="col-sm-10">
+            <input type="text" name="type" class="form-control" id="inputType" placeholder="请输入类别">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">文章内容</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="inputContent" placeholder="文章内容" aria-describedby="sizing-addon1" name="content"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- //welcome -->
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-w3lsrow">
+        <div class="col-md-4 footer-grids footer-address">
+          <h3>联系方式 :</h3>
+          <ul>
+            <li>
+              <i class="glyphicon glyphicon-send"></i> 572000
+              <span> 海南省三亚市三亚学院北区 </span>
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-phone"></i> +86 131 8046 0240 </li>
+            <li>
+              <i class="glyphicon glyphicon-envelope"></i>
+              <a href="mailto:example@mail.com"> fanshaobo_007@163.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 footer-grids subscribe">
+          <h3>登记邮箱 :</h3>
+          <p>请登记你的邮箱，方便之时我们好与你联系</p>
+          <form action="#" method="post">
+            <input type="text" name="Email" placeholder="请输入你的邮箱" required="">
+            <input type="submit" value="提交">
+          </form>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="col-md-4 footer-grids footer-icons">
+          <h3>社交关注 :</h3>
+          <p>
+            <img src="./Public/Home/Images/qq.png">1374162413</p>
+          <p>
+            <img src="./Public/Home/Images/sina.png">阳光照进回忆的日子</p>
+          <p>
+            <img src="./Public/Home/Images/wechat.png">fansbo</p>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="footer-bottom">
+        <p>@阳光照进回忆的日子</p>
+      </div>
+    </div>
+  </div>
+  <!-- //footer -->
+
+  <!-- smooth-scrolling-of-move-up -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var defaults = {
+        containerID: 'toTop',
+        containerHoverID: 'toTopHover',
+        scrollSpeed: 1200,
+        easingType: 'linear'
+      };
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+    });
+  </script>
+  <!-- //smooth-scrolling-of-move-up -->
+
+  <script src="./Public/Home/Js/bootstrap.js"></script>
+</body>
+
+</html>
