@@ -75,6 +75,7 @@
       </thead>
       <tbody>
         <{foreach $users as $arr}>
+        <{if $arr.role==0}>
         <tr class="text-c">
           <td>
             <input type="checkbox" value="1" name="deltAll">
@@ -113,6 +114,7 @@
             </a>
           </td>
         </tr>
+        <{/if}>
         <{/foreach}>
       </tbody>
     </table>
