@@ -39,6 +39,8 @@
   <!-- start-smooth-scrolling -->
   <script type="text/javascript" src="./Public/Home/Js/move-top.js"></script>
   <script type="text/javascript" src="./Public/Home/Js/easing.js"></script>
+  <script charset="utf-8" src="./Public/Home/Js/editor/kindeditor-min.js"></script>
+  <script charset="utf-8" src="./Public/Home/Js/editor/lang/zh_CN.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function ($) {
       $(".scroll").click(function (event) {
@@ -50,6 +52,15 @@
     });
   </script>
   <!-- //end-smooth-scrolling -->
+  <script>
+    //引入KindEditor在线编辑器
+    var editor;
+    KindEditor.ready(function (K) {
+      editor = K.create('textarea[name="content"]', {
+        allowFileManager: true
+      });
+    });
+  </script>
 
 </head>
 
@@ -73,56 +84,56 @@
               <span class="icon-menu glyphicon glyphicon-menu-hamburger"> </span> Menu
             </button>
             <ul id="dd">
-							<li>
-								<a href="?c=Index&a=index">
-									<span class="icon">
-										<i aria-hidden="true" class="icon-home glyphicon glyphicon glyphicon-book"></i>
-									</span>
-									<span>全部文章</span>
-								</a>
-							</li>
-							<li>
-								<a href="?c=Index&a=add" onclick="$('#section-2').animatescroll();">
-									<span class="icon">
-										<i aria-hidden="true" class="icon-services glyphicon glyphicon-pencil"></i>
-									</span>
-									<span>写文章</span>
-								</a>
-							</li>
-							<li>
-								<a href="?c=Image&a=index" onclick="$('#section-3').animatescroll();">
-									<span class="icon">
-										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon glyphicon-picture"></i>
-									</span>
-									<span>图片</span>
-								</a>
-							</li>
-							<li>
-								<a href="?c=Video&a=index" onclick="$('#section-4').animatescroll();">
-									<span class="icon">
-										<i aria-hidden="true" class="icon-blog glyphicon glyphicon glyphicon-facetime-video
+              <li>
+                <a href="?c=Index&a=index">
+                  <span class="icon">
+                    <i aria-hidden="true" class="icon-home glyphicon glyphicon glyphicon-book"></i>
+                  </span>
+                  <span>全部文章</span>
+                </a>
+              </li>
+              <li>
+                <a href="?c=Index&a=add" onclick="$('#section-2').animatescroll();">
+                  <span class="icon">
+                    <i aria-hidden="true" class="icon-services glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <span>写文章</span>
+                </a>
+              </li>
+              <li>
+                <a href="?c=Image&a=index" onclick="$('#section-3').animatescroll();">
+                  <span class="icon">
+                    <i aria-hidden="true" class="icon-portfolio glyphicon glyphicon glyphicon-picture"></i>
+                  </span>
+                  <span>图片</span>
+                </a>
+              </li>
+              <li>
+                <a href="?c=Video&a=index" onclick="$('#section-4').animatescroll();">
+                  <span class="icon">
+                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon glyphicon-facetime-video
 										"></i>
-									</span>
-									<span>视频</span>
-								</a>
-							</li>
-							<li>
-								<a href="?c=Contect&a=index" onclick="$('#section-5').animatescroll();">
-									<span class="icon mediaIcon">
-										<i aria-hidden="true" class="icon-team glyphicon glyphicon glyphicon-envelope"></i>
-									</span>
-									<span>联系我</span>
-								</a>
-							</li>
-							<li>
-								<a href="?c=User&a=index" onclick="$('#section-6').animatescroll();">
-									<span class="icon mediaIcon">
-										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-user"></i>
-									</span>
-									<span class="mediafont">用户登录</span>
-								</a>
-							</li>
-						</ul>
+                  </span>
+                  <span>视频</span>
+                </a>
+              </li>
+              <li>
+                <a href="?c=Contect&a=index" onclick="$('#section-5').animatescroll();">
+                  <span class="icon mediaIcon">
+                    <i aria-hidden="true" class="icon-team glyphicon glyphicon glyphicon-envelope"></i>
+                  </span>
+                  <span>联系我</span>
+                </a>
+              </li>
+              <li>
+                <a href="?c=User&a=index" onclick="$('#section-6').animatescroll();">
+                  <span class="icon mediaIcon">
+                    <i aria-hidden="true" class="icon-contact glyphicon glyphicon-user"></i>
+                  </span>
+                  <span class="mediafont">用户登录</span>
+                </a>
+              </li>
+            </ul>
           </nav>
 
           <!-- script-for-menu -->
@@ -153,7 +164,7 @@
   <!-- welcome -->
   <div class="welcome">
     <div class="container">
-      <form action="?a=insert" method="post" class="form-horizontal">
+      <form action="?c=Index&a=insert" method="post" class="form-horizontal">
         <div class="form-group">
           <label for="" class="col-sm-2 control-label">文章标题</label>
           <div class="col-sm-10">
@@ -162,8 +173,20 @@
         </div>
         <div class="form-group">
           <label for="" class="col-sm-2 control-label">文章类别</label>
-          <div class="col-sm-10">
-            <input type="text" name="type" class="form-control" id="inputType" placeholder="请输入类别">
+          <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+              <select name="category_id" class="select">
+                <option value="">
+                  全部分类
+                </option>
+                <{foreach $categorys as $category}>
+                  <option value="<{$category.id}>">
+                    <{str_repeat( '--',$category.level*2)}>
+                      <{$category.classname}>
+                  </option>
+                  <{/foreach}>
+              </select>
+            </span>
           </div>
         </div>
         <div class="form-group">
@@ -172,6 +195,12 @@
             <textarea class="form-control" id="inputContent" placeholder="文章内容" aria-describedby="sizing-addon1" name="content"></textarea>
           </div>
         </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+              <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit">&nbsp;&nbsp;提交&nbsp;&nbsp;</button>
+              <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+          </div>
       </form>
     </div>
   </div>

@@ -9,8 +9,11 @@ final class UserController extends BaseController
 	//显示后台首页
 	public function index()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+		$this->denyAccess();
+		$arr = UserModel::getInstance()->fetchOne("id={$_SESSION['uid']}");
+		$result = $arr['username'];
+		$this->smarty->assign("result",$result);
 		$this->smarty->show("index");
   }
   
@@ -42,8 +45,8 @@ final class UserController extends BaseController
 	//显示添加的视图文件
 	public function add()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		$this->smarty->show("add");
 	}
 	
@@ -55,8 +58,8 @@ final class UserController extends BaseController
 	//插入数据
 	public function insert()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取表单提交数据
     $data['username']	   = $_POST['user-name'];
     $data['password']    = $_POST['user-password'];
@@ -90,8 +93,8 @@ final class UserController extends BaseController
 	//插入管理员数据
 	public function admininsert()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取表单提交数据
     $data['username']	   = $_POST['user-name'];
     $data['password']    = $_POST['user-password'];
@@ -125,6 +128,8 @@ final class UserController extends BaseController
 
 	//公共的禁止用户的方法
 	public function banned(){
+		//用户权限验证
+    $this->denyAccess();
 		$id = $_GET['id'];
 		$data = UserModel::getInstance()->fetchOne("id={$id}");
 		if($data['status'] == 1){
@@ -170,8 +175,8 @@ final class UserController extends BaseController
 	//显示修改的表单
 	public function edit()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取地址栏传递的id
 		$id = $_GET['id'];
 		//获取指定ID的数据
@@ -184,8 +189,8 @@ final class UserController extends BaseController
 	//更新用户数据
 	public function update()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取表单提交值
 		$id  						= $_POST['id'];
 		$data['name']		= $_POST['user-realname'];
@@ -217,8 +222,8 @@ final class UserController extends BaseController
 	//显示修改管理员的表单
 	public function adminedit()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取地址栏传递的id
 		$id = $_GET['id'];
 		//获取指定ID的数据
@@ -231,8 +236,8 @@ final class UserController extends BaseController
 	//更新管理员数据
 	public function adminupdate()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取表单提交值
 		$id  						= $_POST['id'];
 		$data['name']		= $_POST['user-realname'];
@@ -264,8 +269,8 @@ final class UserController extends BaseController
 	//删除用户
 	public function delete()
 	{
-    // //用户权限验证
-    // $this->denyAccess();
+    //用户权限验证
+    $this->denyAccess();
 		//获取地址栏传递的ID
 		$id = $_GET['id'];
 		$arr = UserModel::getInstance()->fetchOne("id={$id}");
@@ -340,5 +345,17 @@ final class UserController extends BaseController
 		$captcha = new \Frame\Vendor\Captcha();
 		//获取验证码字符，并保存到SESSION中
 		$_SESSION['captcha'] = $captcha->getCode();
+	}
+	//公共的退出方法
+	public function logout(){
+		//清除用户的SESSION数据
+		unset($_SESSION['username']);
+		unset($_SESSION['uid']);
+		//删除SESSION文件
+		session_destroy();
+		//清除对应的COOKIE数据(sessionID)
+		setcookie(session_id(),false);
+		//跳转到登录页面
+		header("location:index.php");
 	}
 }

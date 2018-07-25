@@ -1,0 +1,101 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="./Public/Admin/Css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="./Public/Admin/Css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="./Public/Admin/Css/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="./Public/Admin/Css/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="./Public/Admin/Css/style.css" />
+<script charset="utf-8" src="./Public/Admin/Js/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="./Public/Admin/Js/editor/lang/zh_CN.js"></script>
+<script>
+	//引入KindEditor在线编辑器
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('textarea[name="content"]', {
+		allowFileManager : true
+	});
+});
+</script>
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>添加文章</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-article-add" method="post" action="?c=Article&a=insert">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="articletitle" name="title">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="articletitle2" name="articletitle2">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章分类：</label>
+			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="category_id" class="select">
+					<option value="">全部类别</option>
+					<{foreach $categorys as $category}>
+					<option value="<{$category.id}>">
+						<{str_repeat('--',$category.level*2)}>
+						<{$category.classname}>
+					</option>
+					<{/foreach}>
+				</select>
+				</span> </div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">关键词：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="keywords" name="keywords">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+			<div class="formControls col-xs-8 col-sm-9"> 
+				<textarea name="content" style="width:100%;height:300px;"></textarea> 
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="./Public/Admin/Js/jquery.min.js"></script> 
+<script type="text/javascript" src="./Public/Admin/Js/layer.js"></script>
+<script type="text/javascript" src="./Public/Admin/Js/H-ui.min.js"></script> 
+<script type="text/javascript" src="./Public/Admins/Js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="./Public/Admin/Js/WdatePicker.js"></script>
+<script type="text/javascript" src="./Public/Admin/Js/jquery.validate.js"></script> 
+<script type="text/javascript" src="./Public/Admin/Js/validate-methods.js"></script> 
+<script type="text/javascript" src="./Public/Admin/Js/messages_zh.js"></script>
+<script type="text/javascript" src="./Public/Admin/Js/webuploader.min.js"></script> 
+</body>
+</html>

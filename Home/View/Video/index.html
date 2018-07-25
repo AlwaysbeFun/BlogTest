@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>个人博客</title>
+	<link rel="icon" type="img/x-ico" href="images/f.ico">
+
+	<!-- mobile apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //mobile apps -->
+
+	<!-- Custom Theme files -->
+	<link href="./Public/Home/Css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="./Public/Home/Css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" type="text/css" href="./Public/Home/Css/DPlayer.min.css">
+	<!-- //Custom Theme files -->
+
+	<!-- js -->
+	<script src="./Public/Home/Js/jquery-1.11.1.min.js"></script>
+	<!-- //js -->
+
+	<!-- web-fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet'
+	  type='text/css'>
+	<!-- //web-fonts -->
+	<script src="./Public/Home/Js/DPlayer.min.js"></script>
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="./Public/Home/Js/move-top.js"></script>
+	<script type="text/javascript" src="./Public/Home/Js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+
+</head>
+
+<body>
+	<!-- banner -->
+	<div class="banner about-banner" style="background-attachment: fixed;">
+		<div class="contextBg">
+
+
+			<!-- banner-text -->
+			<div class="banner-text about-banner-text banner-img">
+				<h2>
+					<ol class="breadcrumb">
+						<li>
+							<a href="index.html" style="color:#fff">首页</a>
+						</li>
+						<li class="active">个人博客</li>
+					</ol>
+				</h2>
+			</div>
+			<!-- //banner-text -->
+
+			<!-- top-navigation -->
+			<div class="main">
+				<div class="container">
+					<nav id="menu" class="nav top-nav">
+						<button class="navtoogle" id="aa">
+							<span class="icon-menu glyphicon glyphicon-menu-hamburger"> </span> Menu
+						</button>
+						<ul id="dd">
+							<li>
+								<a href="?c=Index&a=index">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-home glyphicon glyphicon glyphicon-book"></i>
+									</span>
+									<span>全部文章</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Index&a=add" onclick="$('#section-2').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-services glyphicon glyphicon-pencil"></i>
+									</span>
+									<span>写文章</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Image&a=index" onclick="$('#section-3').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon glyphicon-picture"></i>
+									</span>
+									<span>图片</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Video&a=index" onclick="$('#section-4').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-blog glyphicon glyphicon glyphicon-facetime-video
+													"></i>
+									</span>
+									<span>视频</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=Contect&a=index" onclick="$('#section-5').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-team glyphicon glyphicon glyphicon-envelope"></i>
+									</span>
+									<span>联系我</span>
+								</a>
+							</li>
+							<li>
+								<a href="?c=User&a=index" onclick="$('#section-6').animatescroll();">
+									<span class="icon mediaIcon">
+										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-user"></i>
+									</span>
+									<span class="mediafont">用户登录</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- script-for-menu -->
+					<script>
+						if (window.outerWidth < 520) {
+							$(".top-nav").bind('click', function (e) {
+								$(".top-nav ul").slideToggle("normal", function () {});
+								e.stopPropagation();
+							});
+							$(".banner-text").bind("click", function (e) {
+								$(".top-nav ul").slideUp("normal", function () {});
+								e.stopPropagation();
+							});
+						}
+					</script>
+					<!-- //script-for-menu -->
+
+					<script src="./Public/Home/Js/modernizr.custom.js"></script>
+				</div>
+			</div>
+			<!-- //top-navigation -->
+
+			<div class="clearfix"> </div>
+		</div>
+		<div class="contextBg">
+
+			<!-- features -->
+			<div class="features" style="padding-bottom: 0;">
+				<div class="container">
+					<div class="title">
+						<h3>视频标题</h3>
+						<p>这里是视频简介</p>
+					</div>
+				</div>
+			</div>
+			<!-- //features -->
+
+			<!-- content -->
+			<div class="blog single-page single-pagebg">
+				<div class="container">
+					<div class="blog-info">
+						<div class="blog-left">
+							<h6>25
+								<span>th</span>
+							</h6>
+							<h5>June</h5>
+						</div>
+						<div class="blog-right">
+							<div class="blog-text">
+								<div id="dplayer">
+									<script>
+										// const dp = new DPlayer({
+										// 	container: document.getElementById('dplayer'),
+										// 	screenshot: true,
+										// 	video: {
+										// 		url: './test1.mp4',
+										// 		pic: 'demo.jpg',
+										// 		thumbnails: 'thumbnails.jpg'
+										// 	},
+										// 	subtitle: {
+										// 		url: 'webvtt.vtt'
+										// 	},
+										// 	danmaku: {
+										// 		id: 'demo',
+										// 		api: 'https://api.prprpr.me/dplayer3/'
+										// 	}
+										// });
+										
+			
+										const dp = new DPlayer({
+											container: document.getElementById('dplayer'),
+											autoplay: false,
+											theme: '#FADFA3',
+											loop: true,
+											lang: 'zh-cn',
+											screenshot: true,
+											hotkey: true,
+											preload: 'auto',
+											logo: 'logo.png',
+											volume: 0.7,
+											mutex: true,
+											video: {
+												url: '../test1.mp4',
+												pic: '',
+												thumbnails: '',
+												type: 'auto'
+											},
+											subtitle: {
+												url: 'dplayer.vtt',
+												type: 'webvtt',
+												fontSize: '25px',
+												bottom: '10%',
+												color: '#b7daff'
+											},
+											danmaku: {
+												id: '9E2E3368B56CDBB4',
+												api: 'https://api.prprpr.me/dplayer3/',
+												token: 'tokendemo',
+												maximum: 1000,
+												addition: ['https://api.prprpr.me/dplayer3/bilibili?aid=26186465'], //4157142
+												user: 'DIYgod',
+												bottom: '15%',
+												unlimited: false,
+											},
+											contextmenu: [{
+													text: 'custom1',
+													link: 'https://github.com/DIYgod/DPlayer'
+												},
+												{
+													text: 'custom2',
+													click: (player) => {
+														console.log(player);
+													}
+												}
+											]
+										});
+									
+										
+									</script>
+								</div>
+								<div class="article-links">
+									<ul>
+										<li>
+											<i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+											<span>April 25, 2016</span>
+										</li>
+										<li>
+											<a href="#">
+												<i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+												<span>用户</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+												<span>回复</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="glyphicon glyphicon-share" aria-hidden="true"></i>
+												<span>分享</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="glyphicon glyphicon-link" aria-hidden="true"></i>
+												<span>复制链接</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<!-- //content -->
+
+			<!-- script for menu -->
+			<script>
+				if (window.outerWidth < 520) {
+					$(".blog-info").bind('touchstart', function (e) {
+						$(".top-nav ul").slideUp("normal", function () {});
+						e.stopPropagation();
+					});
+				}
+			</script>
+			<!-- //script for menu -->
+
+		</div>
+	</div>
+	<!-- //banner -->
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-w3lsrow">
+				<div class="col-md-4 footer-grids footer-address">
+					<h3>联系我们 :</h3>
+					<ul>
+						<li>
+							<i class="glyphicon glyphicon-send"></i> 572000
+							<span> 海南省三亚市三亚学院北区 </span>
+						</li>
+						<li>
+							<i class="glyphicon glyphicon-phone"></i> +86 131 8046 0240 </li>
+						<li>
+							<i class="glyphicon glyphicon-envelope"></i>
+							<a href="mailto:example@mail.com"> fanshaobo_007@163.com</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-grids subscribe">
+					<h3>登记邮箱 :</h3>
+					<p>请登记你的邮箱，方便之时我们好与你联系</p>
+					<form action="#" method="post">
+						<input type="text" name="Email" placeholder="请输入你的邮箱" required="">
+						<input type="submit" value="提交">
+					</form>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 footer-grids footer-icons">
+					<h3>社交关注 :</h3>
+					<p>
+						<img src="./Public/Home/Image/qq.png">1374162413</p>
+					<p>
+						<img src="./Public/Home/Image/sina.png">阳光照进回忆的日子</p>
+					<p>
+						<img src="./Public/Home/Image/wechat.png">fansbo</p>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="footer-bottom">
+				<p>@阳光照进回忆的日子</p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var defaults = {
+				containerID: 'toTop',
+				containerHoverID: 'toTopHover',
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up -->
+
+	<script src="./Public/Home/Js/bootstrap.js"></script>
+</body>
+
+</html>
